@@ -3,6 +3,7 @@ import { Body, Post } from '@nestjs/common/decorators';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { GetTasksFilterDto } from './dto/get-tasks-filter.dto';
 import { UpdateTaskStatusDto } from './dto/update-task-status.dto';
+import { Task } from './task.entity';
 import { TasksService } from './tasks.service';
 
 @Controller('tasks')
@@ -25,6 +26,11 @@ export class TasksController {
   // ): Task {
   //   return this.tasksService.createTask(createTaskDto);
   // }
+
+@Get(':id')
+getTaskById(@Param('id') id: string): Promise<Task> {
+  return this.tasksService.getTaskById(id);
+}
 
   // @Get(':id')
   // getTaskById(@Param ('id') id: string): Task {
