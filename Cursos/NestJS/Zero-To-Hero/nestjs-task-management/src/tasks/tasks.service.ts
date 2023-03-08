@@ -49,10 +49,12 @@ export class TasksService {
     return found;
   }
 
-  // deleteTask(id: string): void {
-  //   const taskFound = this.getTaskById(id);
-  //   this.tasks = this.tasks.filter(task => task.id !== taskFound.id);
-  // }
+  async deleteTask(id: string): Promise<void> {
+    const result = await this.tasksRepository.delete(id);
+    if (result.affected === 0) {
+      throw new NotFoundException(`Task With ID "${id}" not found`);
+    }
+  }
 
   // updateTaskStatus(id:string, status: TaskStatus): Task {
   //   let task: Task = this.getTaskById(id);

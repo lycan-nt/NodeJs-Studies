@@ -8,7 +8,7 @@ import { TasksService } from './tasks.service';
 
 @Controller('tasks')
 export class TasksController {
-  constructor(private tasksService: TasksService) {}
+  constructor(private tasksService: TasksService) { }
 
   // @Get()
   // getTasks(
@@ -25,20 +25,20 @@ export class TasksController {
     return this.tasksService.createTask(createTaskDto);
   }
 
-@Get(':id')
-getTaskById(@Param('id') id: string): Promise<Task> {
-  return this.tasksService.getTaskById(id);
-}
+  @Get(':id')
+  getTaskById(@Param('id') id: string): Promise<Task> {
+    return this.tasksService.getTaskById(id);
+  }
 
   // @Get(':id')
   // getTaskById(@Param ('id') id: string): Task {
   //   return this.tasksService.getTaskById(id);
   // }
 
-  // @Delete(':id')
-  // deleteTaskById(@Param('id') id:string) {
-  //   this.tasksService.deleteTask(id);
-  // }
+  @Delete(':id')
+  deleteTaskById(@Param('id') id: string): Promise<void> {
+    return this.tasksService.deleteTask(id);
+  }
 
   // @Patch(':id/status')
   // updateTaskStatus(
