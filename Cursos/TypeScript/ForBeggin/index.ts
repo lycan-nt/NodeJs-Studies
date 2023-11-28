@@ -100,3 +100,41 @@ const newItem2: RetanguloColorido = {
     largura: 10,
     cor: "Preto"
 }
+
+/** Funções */
+
+function getTime(): number {
+    return 10;
+}
+
+function printHello(): void {
+    console.log("Hello");
+}
+
+function multiplicacao(a: number, b:number): number {
+    return a * b;
+}
+
+getTime();
+printHello();
+multiplicacao(5, 5);
+
+function add(a: number, b:number, c?: number): number {
+    return a + b + (c || 0);
+}
+
+add(1,2);
+add(1,2,3);
+
+function saudacao(name: string = "Felipe"): void {
+    console.log(`Olá, ${name}`);
+}
+
+saudacao();
+saudacao("Marcella");
+
+function hello2({nome, idade}: {nome:string, idade: number}): void {
+    console.log(`Hello, ${nome}! Você  tem ${idade} anos.`)
+}
+
+hello2({nome: "Felipe", idade: 28});
