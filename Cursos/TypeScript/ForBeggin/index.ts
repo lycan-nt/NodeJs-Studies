@@ -138,3 +138,12 @@ function hello2({nome, idade}: {nome:string, idade: number}): void {
 }
 
 hello2({nome: "Felipe", idade: 28});
+
+/** Generics */
+
+function imprimirValor<T>(valor: T): void {
+    console.log(valor);
+}
+
+imprimirValor<number>(42);
+imprimirValor<string>("Hello");
