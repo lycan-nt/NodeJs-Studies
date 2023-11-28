@@ -58,3 +58,45 @@ carro2.motor = 1.0;
 
 const nomeIdade: {[index: string]: number} = {};
 nomeIdade["Felipe"] = 28;
+
+/** Aliases E Interfaces */
+
+//Aliases
+type AnoVeiculo = number;
+type MarcaVeiculo = string;
+type ModeloVeiculo = string;
+type Carro = {
+    ano: AnoVeiculo,
+    marca: MarcaVeiculo,
+    modelo: ModeloVeiculo
+};
+
+const uno: AnoVeiculo = 2001;
+const gol: MarcaVeiculo = "Wolksvagen";
+const TSI: ModeloVeiculo = "Up";
+const laFerrari: Carro = {
+    ano: 2002,
+    marca: 'ferrari',
+    modelo: 'Ferraru'
+};
+
+//Interfaces
+interface Retangulo {
+    altura: number,
+    largura: number
+};
+
+const newItem: Retangulo = {
+    altura: 20,
+    largura: 10
+}
+
+interface RetanguloColorido extends Retangulo {
+    cor: string
+};
+
+const newItem2: RetanguloColorido = {
+    altura: 20,
+    largura: 10,
+    cor: "Preto"
+}
