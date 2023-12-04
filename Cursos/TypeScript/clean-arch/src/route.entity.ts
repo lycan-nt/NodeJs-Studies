@@ -30,5 +30,3 @@ const route = new Route({
         {lat: 20, lng: 20}
     ]
 });
-
-route.title = 'Name';
