@@ -25,6 +25,10 @@ export class Route {
         this.endPoint = endPoint;
     }
 
+    updatePoint(points: LatLng[]) {
+        this.points = points;
+    }
+
     private set title(title: string) {
         this.props.title = title;
     }
@@ -47,6 +51,14 @@ export class Route {
 
     private set endPoint(endPoint: LatLng) {
         this.props.endPoint = endPoint;
+    }
+
+    get points(): LatLng[] {
+        return this.props.points;
+    }
+
+    private set points(points: LatLng[]) {
+        this.props.points = points;
     }
 }
 
