@@ -16,8 +16,37 @@ export class Route {
         }
     }
 
-    set title(title: string) {
+    updateTitle(title: string) {
+        this.title = title;
+    }
+
+    updatePosition(startPosition: LatLng, endPoint: LatLng) {
+        this.startPosition = startPosition;
+        this.endPoint = endPoint;
+    }
+
+    private set title(title: string) {
         this.props.title = title;
+    }
+
+    get title(): string {
+        return this.props.title;
+    }
+
+    get startPosition(): LatLng {
+        return this.props.startPosition;
+    }
+
+    private set startPosition(startPosition: LatLng) {
+        this.props.startPosition = startPosition;
+    }
+
+    get endPoint(): LatLng {
+        return this.props.endPoint;
+    }
+
+    private set endPoint(endPoint: LatLng) {
+        this.props.endPoint = endPoint;
     }
 }
 
