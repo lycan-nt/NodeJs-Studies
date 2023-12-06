@@ -1,0 +1,8 @@
+POST http://localhost:3000/routes
+Content-Type: application/json
+
+{
+    "title": "My Title",
+    "startPosition": {lat: 1, lng: 10},
+    "endPosition": {lat: 2, lng: 20}
+}
