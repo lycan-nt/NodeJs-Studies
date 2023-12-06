@@ -2,10 +2,9 @@ export type LatLng = {lat: number, lng: number}
 export type RouteProps = {
     title: string,
     startPosition:LatLng,
-    endPoint: LatLng,
+    endPosition: LatLng,
     points?: LatLng[]
 }
-
 
 export class Route {
     public props: Required<RouteProps>;
@@ -20,9 +19,9 @@ export class Route {
         this.title = title;
     }
 
-    updatePosition(startPosition: LatLng, endPoint: LatLng) {
+    updatePosition(startPosition: LatLng, endPosition: LatLng) {
         this.startPosition = startPosition;
-        this.endPoint = endPoint;
+        this.endPosition = endPosition;
     }
 
     updatePoint(points: LatLng[]) {
@@ -45,12 +44,12 @@ export class Route {
         this.props.startPosition = startPosition;
     }
 
-    get endPoint(): LatLng {
-        return this.props.endPoint;
+    get endPosition(): LatLng {
+        return this.props.endPosition;
     }
 
-    private set endPoint(endPoint: LatLng) {
-        this.props.endPoint = endPoint;
+    private set endPosition(endPosition: LatLng) {
+        this.props.endPosition = endPosition;
     }
 
     get points(): LatLng[] {
@@ -60,12 +59,16 @@ export class Route {
     private set points(points: LatLng[]) {
         this.props.points = points;
     }
+
+    toJson() {
+        return this.props
+    }
 }
 
 const route = new Route({
     title:'Rota 1', 
     startPosition: {lat: 15, lng: 15}, 
-    endPoint: {lat: 20, lng: 20}, 
+    endPosition: {lat: 20, lng: 20}, 
     points: [
         {lat: 20, lng: 20}, 
         {lat: 20, lng: 20}
