@@ -3,7 +3,7 @@ import { CreateRouteUseCase } from '../../../application/create-route.use-case';
 import { RouteInMemoryRepository } from '../../db/route-in-memory.repository';
 
 const app: Express = express();
-app.use(express.json)
+app.use(express.json())
 const repository = new RouteInMemoryRepository();
 const port = process.env.PORT || 3000;
 
