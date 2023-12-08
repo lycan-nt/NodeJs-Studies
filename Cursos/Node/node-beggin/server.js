@@ -15,15 +15,23 @@ server.post('/videos', (request, reply) => {
     return reply.status(201).send();
 });
 
-server.get('/videos', () => {
-
+server.get('/videos', (request, reply) => {
+    const videos = database.list();
+    return videos;
 });
 
-server.put('/videos/:id', () => {
-
+server.put('/videos/:id', (request, reply) => {
+    const videoId = request.params.id;
+    const { title, description, duration } = request.body;
+    database.update(videoId, {
+        title,
+        description,
+        duration
+    });
+    reply.status(204).send();
 });
 
-server.delete('/delete/:id', () => {
+server.delete('/delete/:id', (request) => {
 
 });
 
