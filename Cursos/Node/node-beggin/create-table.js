@@ -4,8 +4,8 @@ sql`
     create TABLE videos (
         title TEXT,
         description TEXT,
-        duration INTEGET
+        duration INTEGER
     );
 `.then(() => {
-    console.log('Table Criade!');
+    console.log('Table Created!');
 })
