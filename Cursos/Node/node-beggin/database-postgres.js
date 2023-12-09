@@ -20,8 +20,9 @@ export class DatabasePostgres {
         await sql`INSERT INTO videos (id, title, description, duration) VALUES (${videoId}, ${title}, ${description}, ${duration})`;
     }
 
-    update(id, video) {
-
+    async update(id, video) {
+        const { title, description, duration } = video;
+        await sql`UPDATE videos set title = ${title}, description = ${description}, duration = ${duration} WHERE id = ${id}`;
     }
 
     delete(id) {
