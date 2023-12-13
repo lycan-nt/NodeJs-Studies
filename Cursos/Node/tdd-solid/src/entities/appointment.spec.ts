@@ -11,6 +11,21 @@ test('Create an appointment', () => {
     expect(appointment.customer).toEqual('Felipe');
 });
 
+test('cannot create an appointment with date start before now', () => {
+    const startsAt = new Date();
+    const endsAt = new Date();
+
+    startsAt.setDate(startsAt.getDate() -1);
+
+    expect(() => {
+        return new Appointment({
+            customer: 'Felipe',
+            startsAt,
+            endsAt
+        });
+    }).toThrow();
+})
+
 test('cannot create an appointment with date end before start date', () => {
     const startsAt = new Date();
     const endsAt = new Date();
