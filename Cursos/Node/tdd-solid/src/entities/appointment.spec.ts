@@ -9,4 +9,19 @@ test('Create an appointment', () => {
     });
     expect(appointment).toBeInstanceOf(Appointment);
     expect(appointment.customer).toEqual('Felipe');
-})
+});
+
+test('cannot create an appointment with date end before start date', () => {
+    const startsAt = new Date();
+    const endsAt = new Date();
+
+    endsAt.setDate(endsAt.getDate() -1);
+
+    expect(() => {
+        return new Appointment({
+            customer: 'Felipe',
+            startsAt,
+            endsAt
+        });
+    }).toThrow();
+});
