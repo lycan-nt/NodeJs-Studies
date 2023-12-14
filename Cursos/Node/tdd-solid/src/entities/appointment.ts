@@ -5,7 +5,7 @@ interface AppointmentProps {
 }
 
 export class Appointment {
-    private props: AppointmentProps | undefined;
+    private props: AppointmentProps;
 
     constructor(props: AppointmentProps) {
         const { startsAt, endsAt } = props;
