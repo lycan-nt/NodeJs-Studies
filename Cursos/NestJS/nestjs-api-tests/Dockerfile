@@ -2,7 +2,7 @@ FROM node:16.16.0-slim
 
 RUN apt install bash
 
-WORKDIR /home/node/app
+WORKDIR ./home/node/app
 
 USER node
 
