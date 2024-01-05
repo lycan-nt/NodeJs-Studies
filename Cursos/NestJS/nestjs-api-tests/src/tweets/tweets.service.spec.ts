@@ -15,4 +15,14 @@ describe('TweetsService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  it('Create a tweet', () => {
+    const tweet = service.create({
+      content: 'Hello World',
+      screen_name: 'Felipe D. Santos'
+    });
+
+    expect(tweet.content).toBe('Hello World');
+    expect(tweet.screen_name).toBe('Felipe D. Santos');
+  });
 });
