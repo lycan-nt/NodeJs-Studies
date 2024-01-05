@@ -19,6 +19,8 @@ services:
     volumes:
       - ./db_data/:/data/db/
       - /etc/timezone:/etc/timezone:ro
+    ports:
+      - "27017:27017"
 
   mongo-express:
       image: mongo-express
