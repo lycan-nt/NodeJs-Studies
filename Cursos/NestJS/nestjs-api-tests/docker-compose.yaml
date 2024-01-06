@@ -16,7 +16,6 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=pass
-      - MONGO_INITDB_DATABASE=tweets
     volumes:
       - ./db_data/:/data/db/
       - /etc/timezone:/etc/timezone:ro
