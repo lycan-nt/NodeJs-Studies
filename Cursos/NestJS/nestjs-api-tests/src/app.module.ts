@@ -2,9 +2,13 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TweetsModule } from './tweets/tweets.module';
+import { MongooseModule } from '@nestjs/mongoose';
 
+const uri = 'mongodb://root:root@db:27017/tweets?authSource=admin';
 @Module({
-  imports: [TweetsModule],
+  imports: [
+    MongooseModule.forRoot(uri),
+    TweetsModule],
   controllers: [AppController],
   providers: [AppService],
 })
