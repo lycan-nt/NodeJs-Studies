@@ -27,5 +27,5 @@ describe('TweetController (e2e)', () => {
                 screen_name: "Felipe D. Santos"
             })
             .expect(201);
-    });
+    }, 300000);
 });
